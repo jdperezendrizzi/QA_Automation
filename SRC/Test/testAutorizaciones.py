@@ -1,7 +1,7 @@
 from datetime import datetime
 import sys
 import HtmlTestRunner
-
+import time
 # Importaciones de Page
 from SRC.PageObjects.Public.pagePublic import PagePublic
 from SRC.PageObjects.Login.pageLogin import PageLogin
@@ -9,6 +9,7 @@ from SRC.PageObjects.Modulos.pageHome import PageHome
 from SRC.PageObjects.Modulos.pageToken import PageToken
 from SRC.PageObjects.Modulos.pageCredenciales import PageCredenciales
 from SRC.PageObjects.Modulos.pageAutorizaciones import PageAutorizaciones
+
 
 # Importaciones Modulos
 from selenium import webdriver
