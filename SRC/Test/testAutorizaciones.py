@@ -50,7 +50,7 @@ class TCAutorizaciones(unittest.TestCase):
 
         self.driver.implicitly_wait(5)
 
-    @unittest.skip('no es por aca cumpa')
+    @unittest.skip('no es por aca cumpa eto no es coca')
     def test_autorizaciones_solicitar(self):
 
         usr = self.diccionario_usuario["UserEmail"]
