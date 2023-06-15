@@ -1,6 +1,6 @@
 #librerias
 import sys
-sys.path.append(r"C:\AUTOMATION-WEB-MEDIFE")
+sys.path.append(r"C:\QA_Automation")
 import unittest
 import HtmlTestRunner
 

@@ -20,13 +20,13 @@ class TCConsultas(unittest.TestCase):
 
     def setUp(self):
         # Carga de JSONS
-        with open(r"C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Config.Json") as ambiente:
+        with open(r"C:/QA_Automation/SRC/datos/Config.Json") as ambiente:
             self.ambiente_webtest = json.loads(ambiente.read())
 
-        with open(r"C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Config.Json") as driver:
+        with open(r"C:/QA_Automation/SRC/datos/Config.Json") as driver:
             self.driver_locate = json.loads(driver.read())
 
-        with open(r"C:/AUTOMATION-WEB-MEDIFE/SRC/datos/User.Json") as usuario:
+        with open(r"C:/QA_Automation/SRC/datos/User.Json") as usuario:
             self.dic_usuario = json.loads(usuario.read())
 
         # Config del driver
@@ -67,7 +67,7 @@ class TCConsultas(unittest.TestCase):
         self.page_home.ir_al_formulario()
 
         datos = {'detalle_mensaje': 'Pruebas Automation',
-                 'adjunto': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_1.jpeg'}
+                 'adjunto': 'C:/QA_Automation/SRC/datos/Images/imagen_1.jpeg'}
         self.page_consultas.completar_formulario_consultas(datos, True)
 
         self.assertEqual(self.page_consultas.return_mensaje_consulta_exitoso(),

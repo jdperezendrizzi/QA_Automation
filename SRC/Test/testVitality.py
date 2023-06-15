@@ -23,13 +23,13 @@ class TCVitality(unittest.TestCase):
 
     def setUp(self):
         # Carga de JSONS
-        with open(r"C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Config.Json") as ambiente:
+        with open(r"C:/QA_Automation/SRC/datos/Config.Json") as ambiente:
             self.ambiente_webtest = json.loads(ambiente.read())
 
-        with open(r"C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Config.Json") as driver:
+        with open(r"C:/QA_Automation/SRC/datos/Config.Json") as driver:
             self.driver_locate = json.loads(driver.read())
 
-        with open(r"C:/AUTOMATION-WEB-MEDIFE/SRC/datos/User.Json") as usuario:
+        with open(r"C:/QA_Automation/SRC/datos/User.Json") as usuario:
             self.diccionario_usuario = json.loads(usuario.read())
 
         # Config del driver

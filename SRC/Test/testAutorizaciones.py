@@ -23,13 +23,13 @@ class TCAutorizaciones(unittest.TestCase):
 
     def setUp(self):
         # Carga de JSONS
-        with open(r"C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Config.Json") as ambiente:
+        with open(r"C:/QA_Automation/SRC/datos/Config.Json") as ambiente:
             self.ambiente_webtest = json.loads(ambiente.read())
 
-        with open(r"C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Config.Json") as driver:
+        with open(r"C:/QA_Automation/SRC/datos/Config.Json") as driver:
             self.driver_locate = json.loads(driver.read())
 
-        with open(r"C:/AUTOMATION-WEB-MEDIFE/SRC/datos/User.Json") as usuario:
+        with open(r"C:/QA_Automation/SRC/datos/User.Json") as usuario:
             self.diccionario_usuario = json.loads(usuario.read())
 
         # Config del driver
@@ -90,7 +90,7 @@ class TCAutorizaciones(unittest.TestCase):
         self.page_autorizaciones.ingresar_tel_asociado(1158748332)
         self.page_autorizaciones.ingresar_email_rehabil("test@test.com")
 
-        adjunto = {'documentacion': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg'}
+        adjunto = {'documentacion': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
 
         self.page_autorizaciones.adjuntar_documentacion_obligatoria(adjunto)
 
@@ -114,7 +114,7 @@ class TCAutorizaciones(unittest.TestCase):
         time.sleep(5)
         self.page_autorizaciones.ingresar_email_RPG("test@test.com")
 
-        adjunto = {'orden': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg'}
+        adjunto = {'orden': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
         self.page_autorizaciones.adjuntar_orden_RPG(adjunto)
 
         self.page_autorizaciones.click_enviar_solicitud_RPG()
@@ -172,7 +172,7 @@ class TCAutorizaciones(unittest.TestCase):
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         self.page_autorizaciones.ingresar_tel_contact_asoc(1158748332)
 
-        adjunto = {'orden': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg'}
+        adjunto = {'orden': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
         self.page_autorizaciones.adjuntar_orden_diabetes(adjunto)
         self.page_autorizaciones.adjuntar_laboratorio(adjunto)
         self.page_autorizaciones.adjuntar_monitoreo_gluc(adjunto)
@@ -208,7 +208,7 @@ class TCAutorizaciones(unittest.TestCase):
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         time.sleep(5)
 
-        adjunto = {'orden': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg'}
+        adjunto = {'orden': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
         self.page_autorizaciones.adjuntar_orden_vacunas(adjunto)
         self.page_autorizaciones.adjuntar_justif_vacunas(adjunto)
 
@@ -238,7 +238,7 @@ class TCAutorizaciones(unittest.TestCase):
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         time.sleep(5)
 
-        adjunto = {'orden': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg'}
+        adjunto = {'orden': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
         self.page_autorizaciones.adjuntar_certificado_pren(adjunto)
         time.sleep(5)
         self.page_autorizaciones.click_enviar_solicitud_RPG()
@@ -322,15 +322,15 @@ class TCAutorizaciones(unittest.TestCase):
         time.sleep(5)
         self.page_autorizaciones.ingresar_institucion_cirugia("clinica")
 
-        adjunto = {'orden': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg',
-                   'carpeta': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg',
-                   'lab': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg',
-                   'veda': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg',
-                   'biopsia': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg',
-                   'rx': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg',
-                   'ecocard': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg',
-                   'espiro': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg',
-                   'polisom': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg'}
+        adjunto = {'orden': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
+                   'carpeta': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
+                   'lab': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
+                   'veda': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
+                   'biopsia': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
+                   'rx': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
+                   'ecocard': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
+                   'espiro': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
+                   'polisom': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
         self.page_autorizaciones.adjuntar_bariatrica(adjunto)
 
         time.sleep(10)
@@ -413,7 +413,7 @@ class TCAutorizaciones(unittest.TestCase):
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         self.page_autorizaciones.ingresar_institucion("clinica")
 
-        adjunto = {'historia_clinica': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg'}
+        adjunto = {'historia_clinica': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
         self.page_autorizaciones.adjuntar_historia_clinica(adjunto)
         time.sleep(5)
         self.page_autorizaciones.click_enviar_solicitud_RPG()

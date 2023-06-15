@@ -24,13 +24,13 @@ class TCReintegros(unittest.TestCase):
 
     def setUp(self):
         # Carga de JSONS
-        with open(r"C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Config.Json") as ambiente:
+        with open(r"C:/QA_Automation/SRC/datos/Config.Json") as ambiente:
             self.ambiente_webtest = json.loads(ambiente.read())
 
-        with open(r"C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Config.Json") as driver:
+        with open(r"C:/QA_Automation/SRC/datos/Config.Json") as driver:
             self.driver_locate = json.loads(driver.read())
 
-        with open(r"C:/AUTOMATION-WEB-MEDIFE/SRC/datos/User.Json") as usuario:
+        with open(r"C:/QA_Automation/SRC/datos/User.Json") as usuario:
             self.diccionario_usuario = json.loads(usuario.read())
 
         # Config del driver
@@ -77,12 +77,12 @@ class TCReintegros(unittest.TestCase):
         self.page_reintegros.completar_inputs("011", "1539776542", "medifeapptest97@medife.com.ar", "Juana Manso 230", "3", "1345.89")
         self.page_reintegros.seleccionar_adjunto_por_indice(0)
 
-        adjuntos = {'factura': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg',
-                    'ord_med': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg',
-                    'radio': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg',
-                    'resul_estu': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg',
-                    'form_sad_men': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg',
-                    'form_odonto': 'C:/AUTOMATION-WEB-MEDIFE/SRC/datos/Images/imagen_2.jpg'
+        adjuntos = {'factura': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
+                    'ord_med': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
+                    'radio': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
+                    'resul_estu': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
+                    'form_sad_men': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
+                    'form_odonto': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'
                     }
 
         self.page_reintegros.adjuntar_archivos(adjuntos)
