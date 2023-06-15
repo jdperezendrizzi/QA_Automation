@@ -81,7 +81,7 @@ class TCMora(unittest.TestCase):
     def test_mora_002(self):
 
         time.sleep(20)
-       # self.page_object_credenciales.click_fondo_home()
+       self.page_object_credenciales.click_fondo_home()
         time.sleep(8)
 
         #self.page_object_credenciales.click_detalle_credencial()

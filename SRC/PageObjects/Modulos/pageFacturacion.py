@@ -25,7 +25,7 @@ class PageFacturacion:
         self.button_aceptar = (By.XPATH, '')
         self.text_disculpe = (By.XPATH, '/html/body/div/table/tbody/tr/td/b/font')
 
-        #Debito Automatico
+        #Debito Automatico- tarjeta
         self.frame_debito = (By.XPATH, "//*[@id='debito']/app-iframe/div/iframe")
         self.input_nombre = (By.XPATH, "//input[@name='nombre']")
         self.select_documento = (By.NAME, "tipodoc")
@@ -38,6 +38,10 @@ class PageFacturacion:
         self.input_banco = (By.NAME, "banco")
         self.link_enviar = (By.XPATH, "/html/body/div[1]/div/div/form/p[12]/a[1]")
         self.texto_adhesion_confirmada = (By.XPATH, "//h3[normalize-space()='Adhesión al débito automático']")
+
+        #Debito Automatico- cuenta
+        self.input_cbu = (By.ID, "cbu")
+
 
     def click_diskette(self):
         self.driver.switch_to.frame(self.driver.find_element(*self.frame_consultas))
@@ -68,6 +72,11 @@ class PageFacturacion:
         WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.input_nombre)).click()
         WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.input_nombre)).send_keys(
             nombre)
+
+    def completar_cbu(self, cbu):
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.input_cbu)).click()
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.input_cbu)).send_keys(cbu)
+
     def seleccionar_documento_por_indice(self, index):
         select_element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.select_documento))
         documento = Select(select_element)
@@ -80,7 +89,7 @@ class PageFacturacion:
         adherir = Select(select_adherir)
         adherir.select_by_index(credito)
 
-    def seleccionar_tipo_tarjeta_por_indice(self, visa):
+    def seleccionar_cuenta_tarjeta_por_indice(self, visa):
         select_tipo = WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.select_tipo_tarjeta))
         tipo_tarjeta = Select(select_tipo)
         tipo_tarjeta.select_by_index(visa)
