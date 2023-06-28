@@ -33,6 +33,7 @@ class TCReintegros(unittest.TestCase):
         with open(r"C:/QA_Automation/SRC/datos/User.Json") as usuario:
             self.diccionario_usuario = json.loads(usuario.read())
 
+
         # Config del driver
         options = webdriver.ChromeOptions()
         options.add_argument("--start-maximized")  # --headless #--start-maximized
@@ -57,13 +58,13 @@ class TCReintegros(unittest.TestCase):
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
         self.page_home.ir_a_reintegros()
-        time.sleep(10)
+        time.sleep(20)
         self.page_reintegros.completar_fechas("04/04/2023", "17/05/2023")
-        time.sleep(5)
+        time.sleep(10)
 
         self.assertEqual(self.page_reintegros.return_no_reintegros(), "No se encontraron reintegros.")
 
-    # @unittest.skip('Ahora no')
+    #@unittest.skip('Ahora no')
     def test_gestion_de_reintegros(self):
         # Login
         usr = self.diccionario_usuario["UserEmail"]

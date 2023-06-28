@@ -68,7 +68,7 @@ class TCCredenciales(unittest.TestCase):
         self.page_credenciales = PageCredenciales(self.driver)
         self.page_home = PageHome(self.driver)
 
-    @unittest.skip("Ahora no")
+    #@unittest.skip("Ahora no")
     def test_credencial_digital_sin_foto(self):
         # Login
         usr = self.dic_usuario["UserEmail"]
@@ -96,7 +96,7 @@ class TCCredenciales(unittest.TestCase):
             print("La descarga del archivo ha fallado.")
 
 
-    #@unittest.skip("Ahora no")
+    @unittest.skip("Ahora no")
     def test_credenciales_002(self):
         # Login
         usr = self.dic_usuario["UserEmail"]
@@ -136,7 +136,7 @@ class TCCredenciales(unittest.TestCase):
                                                   "/html/body/ngb-modal-window/div/div/app-credencial-virtual/div[2]/div/div/div/div[2]/div/button").text,
                          'DESCARGAR')
 
-    @unittest.skip("Ahora no")
+    #@unittest.skip("Ahora no")
     def test_generar_token(self):
         # Login
         usr = self.dic_usuario["UserEmail"]

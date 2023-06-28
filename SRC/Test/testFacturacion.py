@@ -40,7 +40,7 @@ class TCFacturacion (unittest.TestCase):
         self.page_home = PageHome(self.driver)
         self.page_facturacion = PageFacturacion(self.driver)
 
-    @unittest.skip("Not needed now")
+    #@unittest.skip("Not needed now")
     def test_facturacion_facturas(self):
         usr = self.dic_usuario["UserEmail2"]
         self.page_public.ir_a_login()
@@ -52,7 +52,7 @@ class TCFacturacion (unittest.TestCase):
         time.sleep(5)
         self.assertTrue(True)
 
-    @unittest.skip("Not needed now")
+    @unittest.skip("Falta Pagos")
     def test_facturacion_pagos(self): #FALTA PAGOS
         # Login
         usr = self.dic_usuario["UserEmail2"]
@@ -72,7 +72,7 @@ class TCFacturacion (unittest.TestCase):
         # self.assertEqual(self.page_facturacion.return_disculpe(),
         # 'Disculpe, su operación no puede ser concluída. Por favor, vuelva a la página inicial.') #Nos da una pantalla de error en la operación
 
-    @unittest.skip("Not needed now")
+    #@unittest.skip("Not needed now")
     def test_facturacion_debito_automat_credito(self):
         # Login
         usr = self.dic_usuario["UserEmail"]
@@ -96,8 +96,7 @@ class TCFacturacion (unittest.TestCase):
 
         self.assertEqual(self.page_facturacion.return_adhesion_debito_automatico(), "Adhesión al débito automático")
 
-        # @unittest.skip("Not needed now")
-
+    @unittest.skip("No se realiza por error en web")
     def test_facturacion_debito_automat_cuenta(self):
         # Login
         usr = self.dic_usuario["UserEmail"]

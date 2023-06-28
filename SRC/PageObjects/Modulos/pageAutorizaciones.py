@@ -88,13 +88,13 @@ class PageAutorizaciones:
         #salud sexual
         self.card_salud_sexual = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[8]/div')
         self.button_salud_sexual = (By.XPATH, "//p[normalize-space()='Salud sexual integral']")
-        self.button_plan_materno = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[8]/div/div/ul/a[1]')
+        self.button_plan_materno = (By.XPATH, "//a[normalize-space()='Plan materno infantil']")
         self.input_certificado_pren = (By.ID, "file-142")
 
         #traslados
         self.card_traslados =(By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[10]/div')
         self.button_traslados = (By.XPATH, "//p[normalize-space()='Traslados programados']")
-        self.button_traslados_programados = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[10]/div/div/ul/a')
+        self.button_traslados_programados = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[6]/div/div/ul/a')
 
         #insumos
         self.card_insumos =(By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[11]/div')
@@ -103,7 +103,7 @@ class PageAutorizaciones:
 
         #bariatrica
         self.card_bariatrica = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[12]/div')
-        self.button_bariatrica1 = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[12]/div/div/div/p')
+        self.button_bariatrica1 = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[8]/div/div/div/p')
         self.button_bariatrica = (By.XPATH, "//a[normalize-space()='Bariátrica']")
         self.input_fecha_ciru = (By.ID, "FECHA_CIRUGIA")
         self.input_institucion_cirugia = (By.ID, "INSTITUCION")

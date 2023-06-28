@@ -42,7 +42,7 @@ class TCConsultas(unittest.TestCase):
         self.page_consultas = PageConsultas(self.driver)
         self.page_home = PageHome(self.driver)
 
-    @unittest.skip("testeaando")
+    #@unittest.skip("testeaando")
     def test_ir_a_formulario_consulta(self):
         # Login
         usr = self.dic_usuario["UserEmail"]

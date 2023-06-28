@@ -49,8 +49,8 @@ class TCAutorizaciones(unittest.TestCase):
 
         self.driver.implicitly_wait(5)
 
-    @unittest.skip('no es por aca cumpa')
-    def test_autorizaciones_solicitar(self):
+    @unittest.skip('no está más')
+    def test_autorizaciones_solicitar_salud_mental(self):
 
         usr = self.diccionario_usuario["UserEmail"]
         self.page_public.ir_a_login()
@@ -70,7 +70,7 @@ class TCAutorizaciones(unittest.TestCase):
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_autorizacion(), "Comprobante de Solicitud de autorización")
 
-    @unittest.skip('no es por aca cumpa')
+    @unittest.skip('No está más')
     def test_autorizaciones_solicitar_discapacidad(self): #no está terminado porque aparece cartel de que la combinacion tipo/subtipo no existe
         usr = self.diccionario_usuario["UserEmail"]
         self.page_public.ir_a_login()
@@ -94,7 +94,7 @@ class TCAutorizaciones(unittest.TestCase):
 
         self.page_autorizaciones.adjuntar_documentacion_obligatoria(adjunto)
 
-    @unittest.skip('no es por aca cumpa')
+    #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_med(self):
         usr = self.diccionario_usuario["UserEmail"]
         self.page_public.ir_a_login()
@@ -121,7 +121,7 @@ class TCAutorizaciones(unittest.TestCase):
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(), "Comprobante de Solicitud de autorización")
 
-    @unittest.skip('no es por aca cumpa')
+    @unittest.skip('no está más')
     def test_autorizaciones_solicitar_practicas_internacion(self):
         usr = self.diccionario_usuario["UserEmail"]
         self.page_public.ir_a_login()
@@ -151,7 +151,7 @@ class TCAutorizaciones(unittest.TestCase):
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(), "Comprobante de Solicitud de autorización")
 
 
-    @unittest.skip('no es por aca cumpa')
+    #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_diabetes(self):
         usr = self.diccionario_usuario["UserEmail"]
         self.page_public.ir_a_login()
@@ -186,7 +186,7 @@ class TCAutorizaciones(unittest.TestCase):
                          "Comprobante de Solicitud de autorización")
 
 
-    @unittest.skip('no es por aca cumpa')
+    @unittest.skip('no funciona')
     def test_autorizaciones_solicitar_practicas_medicacion(self):
         usr = self.diccionario_usuario["UserEmail"]
         self.page_public.ir_a_login()
@@ -218,7 +218,7 @@ class TCAutorizaciones(unittest.TestCase):
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(), "Comprobante de Solicitud de autorización")
 
-    @unittest.skip('no es por aca cumpa')
+    #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_salud_sexual(self):
         usr = self.diccionario_usuario["UserEmail"]
         self.page_public.ir_a_login()
@@ -247,7 +247,7 @@ class TCAutorizaciones(unittest.TestCase):
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(),
                          "Comprobante de Solicitud de autorización")
 
-    @unittest.skip('no es por aca cumpa')
+    #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_traslados(self):
         usr = self.diccionario_usuario["UserEmail"]
         self.page_public.ir_a_login()
@@ -272,8 +272,8 @@ class TCAutorizaciones(unittest.TestCase):
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(), "Comprobante de Solicitud de autorización")
 
-    @unittest.skip('no es por aca cumpa')
-    def test_autorizaciones_solicitar_practicas_traslados(self):
+    #@unittest.skip('no es por aca cumpa')
+    def test_autorizaciones_solicitar_practicas_insumos(self):
         usr = self.diccionario_usuario["UserEmail"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
@@ -298,7 +298,7 @@ class TCAutorizaciones(unittest.TestCase):
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(), "Comprobante de Solicitud de autorización")
 
-    @unittest.skip('no es por aca cumpa')
+    #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_bariatrica(self):
         usr = self.diccionario_usuario["UserEmail"]
         self.page_public.ir_a_login()
@@ -340,7 +340,7 @@ class TCAutorizaciones(unittest.TestCase):
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(),
                          "Comprobante de Solicitud de autorización")
 
-    @unittest.skip('no es por aca cumpa')
+    #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_ortesis(self):
         usr = self.diccionario_usuario["UserEmail"]
         self.page_public.ir_a_login()
@@ -365,7 +365,7 @@ class TCAutorizaciones(unittest.TestCase):
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(),
                          "Comprobante de Solicitud de autorización")
 
-    @unittest.skip('no es por aca cumpa')
+    #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_fertilidad(self):
         usr = self.diccionario_usuario["UserEmail"]
         self.page_public.ir_a_login()
@@ -423,7 +423,7 @@ class TCAutorizaciones(unittest.TestCase):
 
 
 
-    @unittest.skip('no es por aca cumpa')
+    #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_consultar(self):
 
         usr = self.diccionario_usuario["UserEmail"]
