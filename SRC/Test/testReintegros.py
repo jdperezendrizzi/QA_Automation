@@ -54,7 +54,7 @@ class TCReintegros(unittest.TestCase):
     # @unittest.skip('Ahora no')
     def test_consulta_de_reintegros(self):
         # Login
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
         self.page_home.ir_a_reintegros()
@@ -67,7 +67,7 @@ class TCReintegros(unittest.TestCase):
     #@unittest.skip('Ahora no')
     def test_gestion_de_reintegros(self):
         # Login
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
         self.page_home.ir_a_reintegros()

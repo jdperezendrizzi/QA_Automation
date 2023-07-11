@@ -52,7 +52,7 @@ class TCAutorizaciones(unittest.TestCase):
     @unittest.skip('no está más')
     def test_autorizaciones_solicitar_salud_mental(self):
 
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -72,7 +72,7 @@ class TCAutorizaciones(unittest.TestCase):
 
     @unittest.skip('No está más')
     def test_autorizaciones_solicitar_discapacidad(self): #no está terminado porque aparece cartel de que la combinacion tipo/subtipo no existe
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -96,7 +96,7 @@ class TCAutorizaciones(unittest.TestCase):
 
     #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_med(self):
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -123,7 +123,7 @@ class TCAutorizaciones(unittest.TestCase):
 
     @unittest.skip('no está más')
     def test_autorizaciones_solicitar_practicas_internacion(self):
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -153,7 +153,7 @@ class TCAutorizaciones(unittest.TestCase):
 
     #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_diabetes(self):
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -186,9 +186,9 @@ class TCAutorizaciones(unittest.TestCase):
                          "Comprobante de Solicitud de autorización")
 
 
-    @unittest.skip('no funciona')
+    #@unittest.skip('no es por aca')
     def test_autorizaciones_solicitar_practicas_medicacion(self):
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -208,11 +208,11 @@ class TCAutorizaciones(unittest.TestCase):
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         time.sleep(5)
 
-        adjunto = {'orden': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
-        self.page_autorizaciones.adjuntar_orden_vacunas(adjunto)
-        self.page_autorizaciones.adjuntar_justif_vacunas(adjunto)
+        #adjunto = {'orden': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
+        #self.page_autorizaciones.adjuntar_orden_vacunas(adjunto)
+        #self.page_autorizaciones.adjuntar_justif_vacunas(adjunto)
 
-        time.sleep(5)
+        #time.sleep(5)
         self.page_autorizaciones.click_enviar_solicitud_RPG()
         time.sleep(10)
 
@@ -220,7 +220,7 @@ class TCAutorizaciones(unittest.TestCase):
 
     #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_salud_sexual(self):
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -249,7 +249,7 @@ class TCAutorizaciones(unittest.TestCase):
 
     #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_traslados(self):
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -274,7 +274,7 @@ class TCAutorizaciones(unittest.TestCase):
 
     #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_insumos(self):
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -300,7 +300,7 @@ class TCAutorizaciones(unittest.TestCase):
 
     #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_bariatrica(self):
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -342,7 +342,7 @@ class TCAutorizaciones(unittest.TestCase):
 
     #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_ortesis(self):
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -367,7 +367,7 @@ class TCAutorizaciones(unittest.TestCase):
 
     #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_fertilidad(self):
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -386,7 +386,7 @@ class TCAutorizaciones(unittest.TestCase):
         self.page_autorizaciones.ingresar_fecha_orden_medica(60)
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         self.page_autorizaciones.ingresar_tel_contacto("1156739865")
-        time.sleep(5)
+        time.sleep(10)
         self.page_autorizaciones.click_enviar_solicitud_RPG()
         time.sleep(5)
 
@@ -395,7 +395,7 @@ class TCAutorizaciones(unittest.TestCase):
 
     #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_odontologicas(self):
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -421,12 +421,33 @@ class TCAutorizaciones(unittest.TestCase):
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(), "Comprobante de Solicitud de autorización")
 
+    #@unittest.skip('no es por aca cumpa')
+    def test_autorizaciones_solicitar_medife_mama(self):
+        usr = self.diccionario_usuario["UserEmail2"]
+        self.page_public.ir_a_login()
+        self.login.ingresar(usr["email"], usr["clave"])
 
+        self.page_home.ir_a_solicitar_autorizacion()
+        time.sleep(5)
+        self.page_autorizaciones.click_medife_mama()
+        self.page_autorizaciones.click_modificar_plan()
+        time.sleep(5)
+        self.page_autorizaciones.seleccionar_practica_kinesio_por_indice(1)
+        self.page_autorizaciones.click_iniciar_autorizacion()
+        time.sleep(5)
+        self.page_autorizaciones.seleccionar_integrante(1)
+        time.sleep(5)
+        self.page_autorizaciones.ingresar_email_asociado("test@test.com")
+        self.page_autorizaciones.click_enviar_solicitud_RPG()
+        time.sleep(5)
+
+        self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(),
+                         "Comprobante de Solicitud de autorización")
 
     #@unittest.skip('no es por aca cumpa')
     def test_autorizaciones_consultar(self):
 
-        usr = self.diccionario_usuario["UserEmail"]
+        usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 

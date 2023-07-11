@@ -49,7 +49,7 @@ class TCLogin(unittest.TestCase):
 
     # @unittest.skip("tam testeando este esta ok")
     def test_login_email(self):
-        user_email = self.dic_users["UserEmail"]
+        user_email = self.dic_users["UserEmail2"]
         self.page_public.ir_a_login()
         self.page_login.ingresar(user_email["email"], user_email["clave"])
         self.page_home.click_link_usuario_menu()

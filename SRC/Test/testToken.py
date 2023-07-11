@@ -67,7 +67,7 @@ class TCToken(unittest.TestCase):
 
     def test_token_001(self):
         # Login
-        usr = self.dic_usuario["UserEmail"]
+        usr = self.dic_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 

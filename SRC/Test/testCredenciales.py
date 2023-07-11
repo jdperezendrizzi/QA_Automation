@@ -71,7 +71,7 @@ class TCCredenciales(unittest.TestCase):
     #@unittest.skip("Ahora no")
     def test_credencial_digital_sin_foto(self):
         # Login
-        usr = self.dic_usuario["UserEmail"]
+        usr = self.dic_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -99,7 +99,7 @@ class TCCredenciales(unittest.TestCase):
     @unittest.skip("Ahora no")
     def test_credenciales_002(self):
         # Login
-        usr = self.dic_usuario["UserEmail"]
+        usr = self.dic_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 

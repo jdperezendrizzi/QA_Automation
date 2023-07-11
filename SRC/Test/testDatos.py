@@ -44,7 +44,7 @@ class TCDatos(unittest.TestCase):
     #@unittest.skip('Ahora no')
     def test_ir_a_formulario_consulta(self):
         # Login
-        usr = self.dic_usuario["UserEmail"]
+        usr = self.dic_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 

@@ -49,7 +49,7 @@ class PageAutorizaciones:
 
         #practicas medicas
         self.button_practicas_med = (By.XPATH, "//p[normalize-space()='Prácticas médicas']")
-        self.card_practicas_med = (By.XPATH, "//div[@class='col-sm-4 col-lg pb-3 pb-lg-0 item ng-star-inserted active']//div[@class='card-body']")
+        self.card_practicas_med = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[2]/div')
         self.button_kinesiologia = (By.XPATH, "//a[normalize-space()='Kinesiología']")
         self.select_practica_kinesio = (By.NAME, "practica")
         self.button_iniciar_autorizacion = (By.XPATH, "//button[normalize-space()='INICIAR AUTORIZACIÓN']")
@@ -57,7 +57,7 @@ class PageAutorizaciones:
         self.input_fecha_RPG = (By.ID, "FECHA_ORDEN_MEDICA")
         self.input_email_RPG = (By.ID, "EMAIL_ASOCIADO")
         self.input_adjuntar_orden_RPG= (By.XPATH, "//input[@id='file-448']")
-        self.button_enviar_solicitud_RPG = (By.XPATH, "//button[@type='submit']")
+        self.button_enviar_solicitud_RPG = (By.XPATH, '//*[@id="solicitar"]/div[2]/div/app-autorizaciones-solicitar/form/div/div[3]/div[3]/button')
         self.text_comprobante_RPG = (By.XPATH, "//p[@class='h4 mb-4']")
 
         #internacion
@@ -69,7 +69,7 @@ class PageAutorizaciones:
         self.input_tel_contacto = (By.ID, "TELEFONO_CONTACTO")
 
         #diabetes
-        self.card_diabetes = (By.XPATH, "//div[@class='col-sm-4 col-lg pb-3 pb-lg-0 item ng-star-inserted active']//div[@class='card']")
+        self.card_diabetes = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[4]/div')
         self.button_diabetes = (By.XPATH, "//p[normalize-space()='Diabetes']")
         self.button_insumos_diabetes = (By. XPATH, "//a[normalize-space()='Insumos diabetes']")
         self.input_tel_contact_asoc = (By.ID, "TEL_CONTACTO_ASOC")
@@ -86,23 +86,22 @@ class PageAutorizaciones:
         self.input_justif_vacunas = (By.ID, "file-1018")
 
         #salud sexual
-        self.card_salud_sexual = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[8]/div')
+        self.header_salud_sexual = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[7]/div/div/div')
         self.button_salud_sexual = (By.XPATH, "//p[normalize-space()='Salud sexual integral']")
         self.button_plan_materno = (By.XPATH, "//a[normalize-space()='Plan materno infantil']")
         self.input_certificado_pren = (By.ID, "file-142")
 
         #traslados
-        self.card_traslados =(By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[10]/div')
-        self.button_traslados = (By.XPATH, "//p[normalize-space()='Traslados programados']")
-        self.button_traslados_programados = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[6]/div/div/ul/a')
+        self.icon_traslados =(By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[8]/div/div/div/div')
+        self.button_traslados = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[8]/div/div/ul/a')
 
         #insumos
-        self.card_insumos =(By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[11]/div')
+        self.card_insumos =(By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[9]/div')
         self.button_insumos = (By.XPATH, "//p[normalize-space()='Insumos']")
         self.button_descartables = (By.XPATH, "(//a[normalize-space()='Descartables'])[1]")
 
         #bariatrica
-        self.card_bariatrica = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[12]/div')
+        self.card_bariatrica = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[10]/div')
         self.button_bariatrica1 = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[8]/div/div/div/p')
         self.button_bariatrica = (By.XPATH, "//a[normalize-space()='Bariátrica']")
         self.input_fecha_ciru = (By.ID, "FECHA_CIRUGIA")
@@ -118,20 +117,24 @@ class PageAutorizaciones:
         self.input_polisom = (By.ID, "file-1823")
 
         #ortesis
-        self.card_ortesis = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[13]/div')
+        self.card_ortesis = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[11]/div')
         self.button_ortesis = (By.XPATH, "//p[normalize-space()='Órtesis']")
-        self.button_otras_ortesis = (By.XPATH, "//a[normalize-space()='Otras órtesis']")
+        self.button_otras_ortesis = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[11]/div/div/ul/a[1]')
 
         #fertilidad
-        self.card_fertilidad = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[14]/div')
+        self.card_fertilidad = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[12]/div')
         self.button_fertilidad = (By.XPATH, "//p[normalize-space()='Fertilidad']")
         self.button_medicacion_exc = (By.XPATH, "//a[normalize-space()='Medicacion Excedente']")
 
         #practicas odontologicas
-        self.card_odontologicas = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[15]/div')
+        self.card_odontologicas = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[14]/div')
         self.button_odontologicas = (By.XPATH, "//p[normalize-space()='Prácticas odontológicas']")
-        self.button_fisurados = (By.XPATH, "//a[normalize-space()='FLAP / Fisurados']")
+        self.button_fisurados = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[14]/div/div/ul/a[1]')
         self.input_historia_clinica = (By.ID, "file-1188")
+
+        #medife mama
+        self.card_medife_mama = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[6]/div')
+        self.button_modificar_plan = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[6]/div/div/ul/a[2]')
 
 
         # consultar
@@ -175,7 +178,7 @@ class PageAutorizaciones:
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_plan_materno)).click()
 
     def click_traslados_programados(self):
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_traslados_programados)).click()
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_traslados)).click()
 
     def click_descartables(self):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_descartables)).click()
@@ -219,10 +222,7 @@ class PageAutorizaciones:
             WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_discapacidad)).click()
 
     def click_practicas_med(self):
-        try:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_practicas_med)).click()
-        except ECIE:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_practicas_med)).click()
+       WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_practicas_med)).click()
 
     def click_internacion(self):
         try:
@@ -231,58 +231,31 @@ class PageAutorizaciones:
             WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_internacion)).click()
 
     def click_diabetes(self):
-        try:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_diabetes)).click()
-        except ECIE:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_diabetes)).click()
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_diabetes)).click()
 
     def click_medicacion(self):
-        try:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_medicacion)).click()
-        except ECIE:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_medicacion)).click()
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_medicacion)).click()
 
     def click_salud_sexual(self):
-        try:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_salud_sexual)).click()
-        except ECIE:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_salud_sexual)).click()
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.header_salud_sexual)).click()
 
     def click_traslados(self):
-        try:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_traslados)).click()
-        except ECIE:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_traslados)).click()
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.icon_traslados)).click()
 
     def click_insumos(self):
-        try:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_insumos)).click()
-        except ECIE:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_insumos)).click()
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_insumos)).click()
 
     def click_bariatrica_card(self):
-        try:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_bariatrica1)).click()
-        except ECIE:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_bariatrica)).click()
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_bariatrica)).click()
 
     def click_ortesis(self):
-        try:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_ortesis)).click()
-        except ECIE:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_ortesis)).click()
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_ortesis)).click()
 
     def click_fertilidad(self):
-        try:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_fertilidad)).click()
-        except ECIE:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_fertilidad)).click()
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_fertilidad)).click()
 
     def click_odontologicas(self):
-        try:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_odontologicas)).click()
-        except ECIE:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_odontologicas)).click()
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_odontologicas)).click()
 
 
     def click_autorizacion_documentacion(self):
@@ -331,6 +304,12 @@ class PageAutorizaciones:
 
     def click_iniciar_autorizacion(self):
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(self.button_iniciar_autorizacion)).click()
+
+    def click_medife_mama(self):
+        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(self.card_medife_mama)).click()
+
+    def click_modificar_plan(self):
+        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(self.button_modificar_plan)).click()
 
     def seleccionar_integrante(self, indice):
             select_element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.select_integrante))

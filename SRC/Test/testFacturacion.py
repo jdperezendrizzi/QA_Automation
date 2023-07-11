@@ -75,7 +75,7 @@ class TCFacturacion (unittest.TestCase):
     #@unittest.skip("Not needed now")
     def test_facturacion_debito_automat_credito(self):
         # Login
-        usr = self.dic_usuario["UserEmail"]
+        usr = self.dic_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
@@ -99,7 +99,7 @@ class TCFacturacion (unittest.TestCase):
     @unittest.skip("No se realiza por error en web")
     def test_facturacion_debito_automat_cuenta(self):
         # Login
-        usr = self.dic_usuario["UserEmail"]
+        usr = self.dic_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
