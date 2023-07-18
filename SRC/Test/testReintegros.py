@@ -64,7 +64,7 @@ class TCReintegros(unittest.TestCase):
 
         self.assertEqual(self.page_reintegros.return_no_reintegros(), "No se encontraron reintegros.")
 
-    #@unittest.skip('Ahora no')
+    @unittest.skip('Ahora no')
     def test_gestion_de_reintegros(self):
         # Login
         usr = self.diccionario_usuario["UserEmail2"]

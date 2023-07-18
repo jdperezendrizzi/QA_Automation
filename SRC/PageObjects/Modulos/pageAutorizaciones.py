@@ -22,7 +22,7 @@ class PageAutorizaciones:
         self.button_salud_mental = (By.XPATH, "//p[contains(text(),'Salud mental')]")
         self.card_salud_mental = (By.XPATH, "//*[@id='solicitar']/div[2]/div[2]/div[1]/div/div")
         self.link_inicio_tratamiento = (By.XPATH, "//a[contains(text(),'Inicio o Continuidad de Tratamiento')]")
-        self.button_aceptar = (By.XPATH, "//button[contains(text(),'Aceptar')]")
+        self.button_aceptar = (By.XPATH, "//button[normalize-space()='Aceptar']")
         self.button_iniciar_autorizacion = (By.XPATH, "//button[contains(text(),'INICIAR AUTORIZACIÓN')]")
         self.select_practica = (By.NAME, "practica")
         self.select_integrante = (By.ID, "integrante")
@@ -57,7 +57,7 @@ class PageAutorizaciones:
         self.input_fecha_RPG = (By.ID, "FECHA_ORDEN_MEDICA")
         self.input_email_RPG = (By.ID, "EMAIL_ASOCIADO")
         self.input_adjuntar_orden_RPG= (By.XPATH, "//input[@id='file-448']")
-        self.button_enviar_solicitud_RPG = (By.XPATH, '//*[@id="solicitar"]/div[2]/div/app-autorizaciones-solicitar/form/div/div[3]/div[3]/button')
+        self.button_enviar_solicitud_RPG = (By.XPATH, '/html/body/app-root/main/app-autorizaciones/div/app-section-tabs/app-section-tab[1]/div[2]/div/app-autorizaciones-solicitar/form/div/div[3]/div[4]/button')
         self.text_comprobante_RPG = (By.XPATH, "//p[@class='h4 mb-4']")
 
         #internacion
@@ -117,14 +117,14 @@ class PageAutorizaciones:
         self.input_polisom = (By.ID, "file-1823")
 
         #ortesis
-        self.card_ortesis = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[11]/div')
+        self.card_ortesis = (By.XPATH, "//div[contains(@class, 'card')]//p[contains(text(), 'Órtesis')]/ancestor::div[@class='card']")
         self.button_ortesis = (By.XPATH, "//p[normalize-space()='Órtesis']")
-        self.button_otras_ortesis = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[11]/div/div/ul/a[1]')
+        self.button_otras_ortesis = (By.CSS_SELECTOR, "div[class='container mb-5 ng-star-inserted'] a:nth-child(1)")
 
         #fertilidad
-        self.card_fertilidad = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[12]/div')
-        self.button_fertilidad = (By.XPATH, "//p[normalize-space()='Fertilidad']")
-        self.button_medicacion_exc = (By.XPATH, "//a[normalize-space()='Medicacion Excedente']")
+        self.card_fertilidad = (By.XPATH, "//div[contains(@class, 'card')]//p[contains(text(), 'Fertilidad')]/ancestor::div[@class='card']")
+        self.button_fertilidad = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[13]/div/div/ul/a[1]')
+        self.button_medicacion_exc = (By.CSS_SELECTOR, "div[class='container mb-5 ng-star-inserted'] a:nth-child(1)")
 
         #practicas odontologicas
         self.card_odontologicas = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[14]/div')
@@ -195,20 +195,6 @@ class PageAutorizaciones:
     def click_fisurados(self):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_fisurados)).click()
 
-    def enviar_solicitud2(self, autorizacion):
-
-        select_element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.select_integrante))
-        integrante = Select(select_element)
-        integrante.select_by_visible_text('EDGAR OSCAR LOPEZ')
-        #self.seleccionar_integrante(autorizacion['indice_integrante'])
-        self.ingresar_fecha_orden_medica(autorizacion['dias_atras'])
-
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.input_cantidad_sesiones)).send_keys(autorizacion['cantidad'])
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.input_email_asociado)).send_keys(autorizacion['email'])
-
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_enviar_solicitud)).click()
-
-
     def click_salud_mental(self):
         try:
             WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_salud_mental)).click()
@@ -225,10 +211,7 @@ class PageAutorizaciones:
        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_practicas_med)).click()
 
     def click_internacion(self):
-        try:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_internacion)).click()
-        except ECIE:
-            WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_internacion)).click()
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_internacion)).click()
 
     def click_diabetes(self):
         WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_diabetes)).click()
@@ -274,13 +257,19 @@ class PageAutorizaciones:
 
     def seleccionar_practica_por_indice(self, index):
         select_element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.select_practica))
-        practica = Select(select_element)
-        practica.select_by_index(index)
+        practicas = Select(select_element)
+        practicas.select_by_index(index)
 
-    def seleccionar_practica_kinesio_por_indice(self, index):
-        select_element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.select_practica_kinesio))
-        practica_kinesio = Select(select_element)
-        practica_kinesio.select_by_index(index)
+    def seleccionar_practica_x_indice(self, index):
+        select_element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.select_practica))
+        practica = Select(select_element)
+        options = practica.options
+
+        if len(options) > (index + 1):
+                practica.select_by_index(index)
+        else:
+            time.sleep(3)
+            practica.select_by_index(index)
 
     def seleccionar_integrante(self, index):
         select_element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.select_integrante))
