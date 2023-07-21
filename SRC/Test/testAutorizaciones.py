@@ -70,7 +70,7 @@ class TCAutorizaciones(unittest.TestCase):
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_autorizacion(), "Comprobante de Solicitud de autorización")
 
-    #@unittest.skip('No está más')
+    @unittest.skip('No está más')
     def test_autorizaciones_solicitar_discapacidad(self): #no está terminado porque aparece cartel de que la combinacion tipo/subtipo no existe
         usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
@@ -78,17 +78,13 @@ class TCAutorizaciones(unittest.TestCase):
 
         self.page_home.ir_a_solicitar_autorizacion()
         self.page_autorizaciones.click_discapacidad()
-        time.sleep(5)
         self.page_autorizaciones.click_autorizacion_documentacion()
-        time.sleep(5)
-        self.page_autorizaciones.click_aceptar_()
-        time.sleep(5)
-        self.page_autorizaciones.seleccionar_practica_x_indice(1)
-        self.page_autorizaciones.click_iniciar_autorizacion_discapacidad()
-        time.sleep(5)
-        self.page_autorizaciones.seleccionar_integrante_discapacidad_por_indice(1)
+        self.page_autorizaciones.click_aceptar()
+        self.page_autorizaciones.seleccionar_practica_por_indice(1)
+        self.page_autorizaciones.click_iniciar_autorizacion()
+        self.page_autorizaciones.seleccionar_integrante(1)
         self.page_autorizaciones.ingresar_tel_asociado(1158748332)
-        self.page_autorizaciones.ingresar_email_rehabil("test@test.com")
+        self.page_autorizaciones.ingresar_email_asociado("test@test.com")
 
         adjunto = {'documentacion': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
 
@@ -102,23 +98,18 @@ class TCAutorizaciones(unittest.TestCase):
 
         self.page_home.ir_a_solicitar_autorizacion()
         self.page_autorizaciones.click_practicas_med()
-        time.sleep(5)
         self.page_autorizaciones.click_kinesiologia()
-        time.sleep(5)
-        self.page_autorizaciones.seleccionar_practica_x_indice(1)
-        time.sleep(5)
+        self.page_autorizaciones.seleccionar_practica_por_indice(1)
         self.page_autorizaciones.click_iniciar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.seleccionar_integrante(1)
-        self.page_autorizaciones.ingresar_fecha_orden_medica_RPG(60)
-        time.sleep(5)
-        self.page_autorizaciones.ingresar_email_RPG("test@test.com")
+        self.page_autorizaciones.ingresar_fecha_orden_medica(60)
+        self.page_autorizaciones.ingresar_email_asociado("test@test.com")
 
         adjunto = {'orden': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
         self.page_autorizaciones.adjuntar_orden_RPG(adjunto)
-        time.sleep(10)
 
-        self.page_autorizaciones.click_enviar_solicitud_RPG()
+
+        self.page_autorizaciones.enviar_solicitud()
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(), "Comprobante de Solicitud de autorización")
 
@@ -130,24 +121,16 @@ class TCAutorizaciones(unittest.TestCase):
 
         self.page_home.ir_a_solicitar_autorizacion()
         self.page_autorizaciones.click_internacion()
-        time.sleep(5)
         self.page_autorizaciones.click_internacion_conmat()
-        time.sleep(5)
-        self.page_autorizaciones.click_aceptar_internacion()
-        time.sleep(5)
-        self.page_autorizaciones.seleccionar_practica_x_indice(1)
-        time.sleep(5)
+        self.page_autorizaciones.click_aceptar()
+        self.page_autorizaciones.seleccionar_practica_por_indice(1)
         self.page_autorizaciones.click_iniciar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.seleccionar_integrante(1)
-        time.sleep(5)
         self.page_autorizaciones.ingresar_tel_contacto("1156739865")
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         self.page_autorizaciones.ingresar_institucion("clinica")
         self.page_autorizaciones.ingresar_fecha_orden_medica(60)
-        time.sleep(10)
-        self.page_autorizaciones.click_enviar_solicitud_RPG()
-        time.sleep(5)
+        self.page_autorizaciones.enviar_solicitud()
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(), "Comprobante de Solicitud de autorización")
 
@@ -161,15 +144,10 @@ class TCAutorizaciones(unittest.TestCase):
         self.page_home.ir_a_solicitar_autorizacion()
         self.page_autorizaciones.click_diabetes()
         self.page_autorizaciones.click_insumos_diabetes()
-        time.sleep(5)
-        self.page_autorizaciones.click_aceptar_()
-        time.sleep(5)
-        self.page_autorizaciones.seleccionar_practica_x_indice(1)
-        time.sleep(5)
+        self.page_autorizaciones.click_aceptar()
+        self.page_autorizaciones.seleccionar_practica_por_indice(1)
         self.page_autorizaciones.click_iniciar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.seleccionar_integrante(1)
-        time.sleep(5)
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         self.page_autorizaciones.ingresar_tel_contact_asoc(1158748332)
 
@@ -179,9 +157,7 @@ class TCAutorizaciones(unittest.TestCase):
         self.page_autorizaciones.adjuntar_monitoreo_gluc(adjunto)
         self.page_autorizaciones.adjuntar_justificativo(adjunto)
 
-        time.sleep(10)
-        self.page_autorizaciones.click_enviar_solicitud_RPG()
-        time.sleep(5)
+        self.page_autorizaciones.enviar_solicitud()
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(),
                          "Comprobante de Solicitud de autorización")
@@ -194,28 +170,20 @@ class TCAutorizaciones(unittest.TestCase):
         self.login.ingresar(usr["email"], usr["clave"])
 
         self.page_home.ir_a_solicitar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.click_medicacion()
         self.page_autorizaciones.click_vacunas()
-        time.sleep(5)
-        self.page_autorizaciones.click_aceptar_()
-        time.sleep(5)
-        self.page_autorizaciones.seleccionar_practica_x_indice(1)
+        self.page_autorizaciones.click_aceptar()
+        self.page_autorizaciones.seleccionar_practica_por_indice(1)
         self.page_autorizaciones.click_iniciar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.seleccionar_integrante(1)
-        time.sleep(5)
-        self.page_autorizaciones.ingresar_tel_contact_asoc(1158748332)
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
-        time.sleep(10)
 
         #adjunto = {'orden': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
         #self.page_autorizaciones.adjuntar_orden_vacunas(adjunto)
         #self.page_autorizaciones.adjuntar_justif_vacunas(adjunto)
 
         #time.sleep(5)
-        self.page_autorizaciones.click_enviar_solicitud_RPG()
-        time.sleep(10)
+        self.page_autorizaciones.enviar_solicitud()
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(), "Comprobante de Solicitud de autorización")
 
@@ -226,24 +194,17 @@ class TCAutorizaciones(unittest.TestCase):
         self.login.ingresar(usr["email"], usr["clave"])
 
         self.page_home.ir_a_solicitar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.click_salud_sexual()
         self.page_autorizaciones.click_plan_materno()
-        time.sleep(5)
-        self.page_autorizaciones.seleccionar_practica_x_indice(1)
+        self.page_autorizaciones.seleccionar_practica_por_indice(1)
         self.page_autorizaciones.click_iniciar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.seleccionar_integrante(1)
-        time.sleep(5)
         self.page_autorizaciones.ingresar_tel_contact_asoc(1158748332)
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
-        time.sleep(5)
 
         adjunto = {'orden': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
         self.page_autorizaciones.adjuntar_certificado_pren(adjunto)
-        time.sleep(10)
-        self.page_autorizaciones.click_enviar_solicitud_RPG()
-        time.sleep(5)
+        self.page_autorizaciones.enviar_solicitud()
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(),
                          "Comprobante de Solicitud de autorización")
@@ -255,21 +216,15 @@ class TCAutorizaciones(unittest.TestCase):
         self.login.ingresar(usr["email"], usr["clave"])
 
         self.page_home.ir_a_solicitar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.click_traslados()
         self.page_autorizaciones.click_traslados_programados()
-        time.sleep(5)
-        self.page_autorizaciones.click_aceptar_()
-        time.sleep(5)
-        self.page_autorizaciones.seleccionar_practica_x_indice(1)
+        self.page_autorizaciones.click_aceptar()
+        self.page_autorizaciones.seleccionar_practica_por_indice(1)
         self.page_autorizaciones.click_iniciar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.seleccionar_integrante(1)
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         self.page_autorizaciones.ingresar_fecha_orden_medica(60)
-        time.sleep(10)
-        self.page_autorizaciones.click_enviar_solicitud_RPG()
-        time.sleep(5)
+        self.page_autorizaciones.enviar_solicitud()
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(), "Comprobante de Solicitud de autorización")
 
@@ -280,22 +235,16 @@ class TCAutorizaciones(unittest.TestCase):
         self.login.ingresar(usr["email"], usr["clave"])
 
         self.page_home.ir_a_solicitar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.click_insumos()
         self.page_autorizaciones.click_descartables()
-        time.sleep(5)
-        self.page_autorizaciones.click_aceptar_()
-        time.sleep(5)
-        self.page_autorizaciones.seleccionar_practica_x_indice(1)
+        self.page_autorizaciones.click_aceptar()
+        self.page_autorizaciones.seleccionar_practica_por_indice(1)
         self.page_autorizaciones.click_iniciar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.seleccionar_integrante(1)
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         self.page_autorizaciones.ingresar_tel_contacto("1156739865")
         self.page_autorizaciones.ingresar_fecha_orden_medica(60)
-        time.sleep(10)
-        self.page_autorizaciones.click_enviar_solicitud_RPG()
-        time.sleep(10)
+        self.page_autorizaciones.enviar_solicitud()
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(), "Comprobante de Solicitud de autorización")
 
@@ -306,21 +255,15 @@ class TCAutorizaciones(unittest.TestCase):
         self.login.ingresar(usr["email"], usr["clave"])
 
         self.page_home.ir_a_solicitar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.click_bariatrica_card()
         self.page_autorizaciones.click_bariatrica()
-        time.sleep(5)
-        self.page_autorizaciones.click_aceptar_()
-        time.sleep(5)
-        self.page_autorizaciones.seleccionar_practica_x_indice(1)
+        self.page_autorizaciones.click_aceptar()
+        self.page_autorizaciones.seleccionar_practica_por_indice(1)
         self.page_autorizaciones.click_iniciar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.seleccionar_integrante(1)
         self.page_autorizaciones.ingresar_fecha_orden_medica(60)
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
-        time.sleep(5)
         self.page_autorizaciones.ingresar_fecha_cirugia(60)
-        time.sleep(5)
         self.page_autorizaciones.ingresar_institucion_cirugia("clinica")
 
         adjunto = {'orden': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg',
@@ -334,9 +277,7 @@ class TCAutorizaciones(unittest.TestCase):
                    'polisom': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
         self.page_autorizaciones.adjuntar_bariatrica(adjunto)
 
-        time.sleep(10)
-        self.page_autorizaciones.click_enviar_solicitud_RPG()
-        time.sleep(10)
+        self.page_autorizaciones.enviar_solicitud()
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(),
                          "Comprobante de Solicitud de autorización")
@@ -348,48 +289,38 @@ class TCAutorizaciones(unittest.TestCase):
         self.login.ingresar(usr["email"], usr["clave"])
 
         self.page_home.ir_a_solicitar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.click_ortesis()
         self.page_autorizaciones.click_otras_ortesis()
-        time.sleep(5)
-        self.page_autorizaciones.seleccionar_practica_x_indice(1)
+        self.page_autorizaciones.seleccionar_practica_por_indice(1)
         self.page_autorizaciones.click_iniciar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.seleccionar_integrante(1)
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         self.page_autorizaciones.ingresar_tel_contacto("1156739865")
         self.page_autorizaciones.ingresar_fecha_orden_medica(60)
-        time.sleep(10)
         self.page_autorizaciones.enviar_solicitud()
-        time.sleep(5)
+
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(),
                          "Comprobante de Solicitud de autorización")
 
-    #@unittest.skip('no es por aca cumpa')
+    @unittest.skip('no es por aca cumpa')
     def test_autorizaciones_solicitar_practicas_fertilidad(self):
         usr = self.diccionario_usuario["UserEmail2"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 
         self.page_home.ir_a_solicitar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.click_fertilidad()
         self.page_autorizaciones.click_medicacion_exc()
-        time.sleep(5)
-        self.page_autorizaciones.click_aceptar_()
-        time.sleep(5)
-        self.page_autorizaciones.seleccionar_practica_x_indice(1)
+        self.page_autorizaciones.click_aceptar()
+        self.page_autorizaciones.seleccionar_practica_por_indice(1)
         self.page_autorizaciones.click_iniciar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.seleccionar_integrante(1)
-        time.sleep(5)
         self.page_autorizaciones.ingresar_fecha_orden_medica(60)
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         self.page_autorizaciones.ingresar_tel_contacto("1156739865")
-        time.sleep(10)
         self.page_autorizaciones.enviar_solicitud()
-        time.sleep(5)
+
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(),
                          "Comprobante de Solicitud de autorización")
@@ -401,24 +332,20 @@ class TCAutorizaciones(unittest.TestCase):
         self.login.ingresar(usr["email"], usr["clave"])
 
         self.page_home.ir_a_solicitar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.click_odontologicas()
         self.page_autorizaciones.click_fisurados()
-        time.sleep(5)
-        self.page_autorizaciones.seleccionar_practica_x_indice(1)
+        self.page_autorizaciones.seleccionar_practica_por_indice(1)
         self.page_autorizaciones.click_iniciar_autorizacion()
-        time.sleep(5)
         self.page_autorizaciones.seleccionar_integrante(1)
-        time.sleep(5)
         self.page_autorizaciones.ingresar_fecha_orden_medica(60)
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         self.page_autorizaciones.ingresar_institucion("clinica")
 
         adjunto = {'historia_clinica': 'C:/QA_Automation/SRC/datos/Images/imagen_2.jpg'}
         self.page_autorizaciones.adjuntar_historia_clinica(adjunto)
-        time.sleep(10)
-        self.page_autorizaciones.click_enviar_solicitud_RPG()
-        time.sleep(5)
+
+        self.page_autorizaciones.enviar_solicitud()
+
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(), "Comprobante de Solicitud de autorización")
 
@@ -433,14 +360,14 @@ class TCAutorizaciones(unittest.TestCase):
         self.page_autorizaciones.click_medife_mama()
         self.page_autorizaciones.click_modificar_plan()
         time.sleep(5)
-        self.page_autorizaciones.seleccionar_practica_x_indice(1)
+        self.page_autorizaciones.seleccionar_practica_por_indice(1)
         self.page_autorizaciones.click_iniciar_autorizacion()
         time.sleep(5)
         self.page_autorizaciones.seleccionar_integrante(1)
         time.sleep(5)
         self.page_autorizaciones.ingresar_email_asociado("test@test.com")
         time.sleep(10)
-        self.page_autorizaciones.click_enviar_solicitud_RPG()
+        self.page_autorizaciones.enviar_solicitud()
         time.sleep(5)
 
         self.assertEqual(self.page_autorizaciones.return_comprob_solic_RPG(),

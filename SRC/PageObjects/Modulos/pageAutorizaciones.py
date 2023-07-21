@@ -23,9 +23,8 @@ class PageAutorizaciones:
         self.card_salud_mental = (By.XPATH, "//*[@id='solicitar']/div[2]/div[2]/div[1]/div/div")
         self.link_inicio_tratamiento = (By.XPATH, "//a[contains(text(),'Inicio o Continuidad de Tratamiento')]")
         self.button_aceptar = (By.XPATH, "//button[normalize-space()='Aceptar']")
-        self.button_iniciar_autorizacion = (By.XPATH, "//button[contains(text(),'INICIAR AUTORIZACIÓN')]")
+        self.button_iniciar_autorizacion = (By.XPATH, "//button[normalize-space()='INICIAR AUTORIZACIÓN']")
         self.select_practica = (By.NAME, "practica")
-        self.select_integrante = (By.ID, "integrante")
         self.input_fecha_orden_medica = (By.ID, "FECHA_ORDEN_MEDICA")
         self.input_cantidad_sesiones = (By.ID, "CANTIDAD_SESIONES")
         self.input_email_asociado = (By.ID, "EMAIL_ASOCIADO")
@@ -39,37 +38,28 @@ class PageAutorizaciones:
         self.card_discapacidad = (By.XPATH, "//div[@class='col-sm-4 col-lg pb-3 pb-lg-0 item ng-star-inserted active']//div[@class='card']")
         self.button_autorizacion_documentacion = (By. XPATH, "//a[normalize-space()='Actualización documentación']")
         self.select_practica_discapacidad = (By.ID, "practica")
-        self.button_iniciar_autorizacion_discapacidad= (By.XPATH, "//button[normalize-space()='INICIAR AUTORIZACIÓN']")
-        self.select_integrante_discapacidad= (By.ID, "integrante")
         self.input_tel_asociado = (By.ID, "TELEFONO_ASOCIADO")
-        self.input_email_rehabil = (By.ID, "EMAIL_ASOCIADO")
         self.input_nombre_prescriptor = (By.ID, "NOMBRE_PRESCRIPTOR")
         self.input_telefono_prescriptor = (By.ID, "CONTACTO_PRESCRIPTOR")
         self.input_documentacion_rehabil = (By.ID, "file-1159")
 
         #practicas medicas
         self.button_practicas_med = (By.XPATH, "//p[normalize-space()='Prácticas médicas']")
-        self.card_practicas_med = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[2]/div')
+        self.card_practicas_med = (By.XPATH, "//div[contains(@class, 'card')]//p[contains(text(), 'Prácticas médicas')]/ancestor::div[@class='card']")
         self.button_kinesiologia = (By.XPATH, "//a[normalize-space()='Kinesiología']")
-        self.select_practica_kinesio = (By.NAME, "practica")
-        self.button_iniciar_autorizacion = (By.XPATH, "//button[normalize-space()='INICIAR AUTORIZACIÓN']")
         self.select_integrante = (By.ID, "integrante")
-        self.input_fecha_RPG = (By.ID, "FECHA_ORDEN_MEDICA")
-        self.input_email_RPG = (By.ID, "EMAIL_ASOCIADO")
         self.input_adjuntar_orden_RPG= (By.XPATH, "//input[@id='file-448']")
-        self.button_enviar_solicitud_RPG = (By.XPATH, '/html/body/app-root/main/app-autorizaciones/div/app-section-tabs/app-section-tab[1]/div[2]/div/app-autorizaciones-solicitar/form/div/div[3]/div[4]/button')
         self.text_comprobante_RPG = (By.XPATH, "//p[@class='h4 mb-4']")
 
         #internacion
         self.button_internacion = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[4]/div/div/div/p')
         self.card_internacion = (By.XPATH, "//div[@class='col-sm-4 col-lg pb-3 pb-lg-0 item ng-star-inserted active']//div[@class='card-body']")
         self.button_internacion_conmat = (By.XPATH, "//a[normalize-space()='Internación con materiales']")
-        self.button_aceptar_internac = (By.XPATH, "//button[normalize-space()='Aceptar']")
         self.input_institucion = (By.ID, "LUGAR_INTERNACION")
         self.input_tel_contacto = (By.ID, "TELEFONO_CONTACTO")
 
         #diabetes
-        self.card_diabetes = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[4]/div')
+        self.card_diabetes = (By.XPATH, "//div[contains(@class, 'card')]//p[contains(text(), 'Diabetes')]/ancestor::div[@class='card']")
         self.button_diabetes = (By.XPATH, "//p[normalize-space()='Diabetes']")
         self.button_insumos_diabetes = (By. XPATH, "//a[normalize-space()='Insumos diabetes']")
         self.input_tel_contact_asoc = (By.ID, "TEL_CONTACTO_ASOC")
@@ -79,29 +69,29 @@ class PageAutorizaciones:
         self.input_justificativo = (By.ID, "file-961")
 
         #medicacion
-        self.card_medicacion = (By.XPATH, "//div[@class='col-sm-4 col-lg pb-3 pb-lg-0 item ng-star-inserted active']//div[@class='card']")
-        self.button_medicacion = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[7]/div/div/div/p')
+        self.card_medicacion = (By.XPATH, "//div[contains(@class, 'card')]//p[contains(text(), 'Medicación')]/ancestor::div[@class='card']")
+        self.button_medicacion = (By.XPATH, "//a[normalize-space()='Medicamentos especiales']")
         self.button_vacunas = (By.XPATH, "//a[normalize-space()='Vacunas']")
         self.input_orden_vacunas = (By.ID, "file-1017")
         self.input_justif_vacunas = (By.ID, "file-1018")
 
         #salud sexual
-        self.header_salud_sexual = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[7]/div/div/div')
+        self.card_salud_sexual = (By.XPATH, "//div[contains(@class, 'card')]//p[contains(text(), 'Salud sexual integral')]/ancestor::div[@class='card']")
         self.button_salud_sexual = (By.XPATH, "//p[normalize-space()='Salud sexual integral']")
         self.button_plan_materno = (By.XPATH, "//a[normalize-space()='Plan materno infantil']")
         self.input_certificado_pren = (By.ID, "file-142")
 
         #traslados
-        self.icon_traslados =(By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[8]/div/div/div/div')
-        self.button_traslados = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[8]/div/div/ul/a')
+        self.card_traslados =(By.XPATH, "//div[contains(@class, 'card')]//p[contains(text(), 'Traslados programados')]/ancestor::div[@class='card']")
+        self.button_traslados = (By.XPATH, "(//a[normalize-space()='Traslados programados'])[1]")
 
         #insumos
-        self.card_insumos =(By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[9]/div')
+        self.card_insumos =(By.XPATH, "//div[contains(@class, 'card')]//p[contains(text(), 'Insumos')]/ancestor::div[@class='card']")
         self.button_insumos = (By.XPATH, "//p[normalize-space()='Insumos']")
         self.button_descartables = (By.XPATH, "(//a[normalize-space()='Descartables'])[1]")
 
         #bariatrica
-        self.card_bariatrica = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[10]/div')
+        self.card_bariatrica = (By.XPATH, "//div[contains(@class, 'card')]//p[contains(text(), 'Bariátrica')]/ancestor::div[@class='card']")
         self.button_bariatrica1 = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[8]/div/div/div/p')
         self.button_bariatrica = (By.XPATH, "//a[normalize-space()='Bariátrica']")
         self.input_fecha_ciru = (By.ID, "FECHA_CIRUGIA")
@@ -127,14 +117,14 @@ class PageAutorizaciones:
         self.button_medicacion_exc = (By.CSS_SELECTOR, "div[class='container mb-5 ng-star-inserted'] a:nth-child(1)")
 
         #practicas odontologicas
-        self.card_odontologicas = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[14]/div')
+        self.card_odontologicas = (By.XPATH, "//div[contains(@class, 'card')]//p[contains(text(), 'Prácticas odontológicas')]/ancestor::div[@class='card']")
         self.button_odontologicas = (By.XPATH, "//p[normalize-space()='Prácticas odontológicas']")
-        self.button_fisurados = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[14]/div/div/ul/a[1]')
+        self.button_fisurados = (By.XPATH, "//a[normalize-space()='FLAP / Fisurados']")
         self.input_historia_clinica = (By.ID, "file-1188")
 
         #medife mama
-        self.card_medife_mama = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[6]/div')
-        self.button_modificar_plan = (By.XPATH, '//*[@id="solicitar"]/div[2]/div[2]/div[6]/div/div/ul/a[2]')
+        self.card_medife_mama = (By.XPATH, "//div[contains(@class, 'card')]//p[contains(text(), 'Medifé mamá')]/ancestor::div[@class='card']")
+        self.button_alta_plan = (By.XPATH, "(//a[normalize-space()='Dar de alta plan materno infantil'])[1]")
 
 
         # consultar
@@ -146,27 +136,15 @@ class PageAutorizaciones:
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.link_inicio_tratamiento)).click()
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_aceptar)).click()
 
-    def iniciar_autorizacion_salud_mental(self, indice):
-        self.seleccionar_practica_por_indice(indice)
-
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_iniciar_autorizacion)).click()
-
-    def click_iniciar_autorizacion_discapacidad(self):
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_iniciar_autorizacion_discapacidad)).click()
 
     def click_iniciar_autorizacion(self):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_iniciar_autorizacion)).click()
 
-    def click_enviar_solicitud_RPG(self):
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_enviar_solicitud_RPG)).click()
     def click_kinesiologia(self):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_kinesiologia)).click()
 
     def click_internacion_conmat(self):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_internacion_conmat)).click()
-
-    def click_aceptar_internacion(self):
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_aceptar_internac)).click()
 
     def click_insumos_diabetes(self):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.button_insumos_diabetes)).click()
@@ -220,10 +198,10 @@ class PageAutorizaciones:
         WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_medicacion)).click()
 
     def click_salud_sexual(self):
-        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.header_salud_sexual)).click()
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_salud_sexual)).click()
 
     def click_traslados(self):
-        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.icon_traslados)).click()
+        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_traslados)).click()
 
     def click_insumos(self):
         WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.card_insumos)).click()
@@ -244,9 +222,6 @@ class PageAutorizaciones:
     def click_autorizacion_documentacion(self):
         WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_autorizacion_documentacion)).click()
 
-    def click_aceptar_(self):
-        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(self.button_aceptar)).click()
-
     def click_inicio_tratamiento(self):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.link_inicio_tratamiento)).click()
 
@@ -257,11 +232,6 @@ class PageAutorizaciones:
 
     def seleccionar_practica_por_indice(self, index):
         select_element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.select_practica))
-        practicas = Select(select_element)
-        practicas.select_by_index(index)
-
-    def seleccionar_practica_x_indice(self, index):
-        select_element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.select_practica))
         practica = Select(select_element)
         options = practica.options
 
@@ -270,11 +240,6 @@ class PageAutorizaciones:
         else:
             time.sleep(3)
             practica.select_by_index(index)
-
-    def seleccionar_integrante(self, index):
-        select_element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.select_integrante))
-        integrante_RPG = Select(select_element)
-        integrante_RPG.select_by_index(index)
 
     def seleccionar_practica_discapacidad_por_indice(self, index):
         select_element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.select_practica_discapacidad))
@@ -298,7 +263,7 @@ class PageAutorizaciones:
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(self.card_medife_mama)).click()
 
     def click_modificar_plan(self):
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(self.button_modificar_plan)).click()
+        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(self.button_alta_plan)).click()
 
     def seleccionar_integrante(self, indice):
             select_element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.select_integrante))
@@ -312,11 +277,6 @@ class PageAutorizaciones:
                             Deberia estar disabled hasta que carga los integrantes como combo practica'''
                 integrante.select_by_index(indice)
 
-    def seleccionar_integrante_discapacidad_por_indice(self, index):
-        select_element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.select_integrante_discapacidad))
-        practica = Select(select_element)
-        practica.select_by_index(index)
-
     def ingresar_fecha_orden_medica(self, diasAtras):
         ahora = datetime.now()
         fecha = ahora - timedelta(days=diasAtras)
@@ -329,12 +289,6 @@ class PageAutorizaciones:
         fecha_sin_hora = fecha.strftime("%d/%m/%Y") # 23/02/2023
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.input_fecha_ciru)).send_keys(fecha_sin_hora)
 
-    def ingresar_fecha_orden_medica_RPG(self, diasAtras):
-        ahora = datetime.now()
-        fecha = ahora + timedelta(days=diasAtras)
-        fecha_sin_hora = fecha.strftime("%d/%m/%Y") # 23/02/2023
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.input_fecha_RPG)).send_keys(fecha_sin_hora)
-
     def ingresar_cant_sesiones(self, cantidad):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.input_cantidad_sesiones)).click()
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.input_cantidad_sesiones)).send_keys(cantidad)
@@ -342,14 +296,6 @@ class PageAutorizaciones:
     def ingresar_email_asociado(self, email):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.input_email_asociado)).click()
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.input_email_asociado)).send_keys(email)
-
-    def ingresar_email_RPG(self, email):
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.input_email_RPG)).click()
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.input_email_RPG)).send_keys(email)
-
-    def ingresar_email_rehabil(self, email):
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.input_email_rehabil)).click()
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.input_email_rehabil)).send_keys(email)
 
     def ingresar_tel_asociado(self, tel):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.input_tel_asociado)).click()
