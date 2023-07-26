@@ -1,0 +1,4 @@
+{
+"ambiente": ["https://webtest.medife.com.ar/"],
+"driver": "C:/QA_Automation/SRC/chromedriver.exe"
+}
