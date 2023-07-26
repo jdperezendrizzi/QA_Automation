@@ -1,4 +1,4 @@
 {
-"ambiente": ["https://webtest.medife.com.ar/"],
+"ambiente": ["http://ase-ventas-ui-aseventas-test.apps.openshift.ase.local/login/"],
 "driver": "C:/QA_Automation/SRC/chromedriver.exe"
 }

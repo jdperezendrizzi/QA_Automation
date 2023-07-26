@@ -17,9 +17,9 @@ class PageLogin:
         self.button_ingreso_dni = (By.XPATH, "//button[normalize-space()='Ingresá con tu documento']")
         self.button_ingreso_mail = (By.XPATH, "//button[normalize-space()='Ingresá con tu email']")
 
-        self.input_mail = (By.XPATH, "//input[@id='email']")
-        self.input_pass = (By.ID, "password")
-        self.button_login = (By.XPATH, "//button[normalize-space()='LOGIN']")
+        self.input_mail = (By.XPATH, "//*[@id='userInput']")
+        self.input_pass = (By.XPATH,"//input[@id='passwordInput']")
+        self.button_login = (By.XPATH, "//span[contains(text(),'Ingresar')]")
         self.text_ingresando = (By.XPATH, "//span[contains(text(),'Ingresando..')]")
 
         self.input_dni = (By.ID, "nrodoc")

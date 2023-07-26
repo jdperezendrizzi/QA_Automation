@@ -52,7 +52,7 @@ class TCAutorizaciones(unittest.TestCase):
     @unittest.skip('no está más')
     def test_autorizaciones_solicitar_salud_mental(self):
 
-        usr = self.diccionario_usuario["UserEmail2"]
+        usr = self.diccionario_usuario["UserEmail"]
         self.page_public.ir_a_login()
         self.login.ingresar(usr["email"], usr["clave"])
 

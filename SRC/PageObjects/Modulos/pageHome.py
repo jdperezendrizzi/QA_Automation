@@ -1,6 +1,6 @@
 import time
 
-import self as self
+#import self as self
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException as NSEE
