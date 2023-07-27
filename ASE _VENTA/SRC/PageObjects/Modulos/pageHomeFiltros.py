@@ -13,7 +13,7 @@ from datetime import timedelta
 import random
 
 
-class PageAutorizaciones:
+class PageHomeFiltros:
 
     def __init__(self, my_driver):
         self.driver = my_driver

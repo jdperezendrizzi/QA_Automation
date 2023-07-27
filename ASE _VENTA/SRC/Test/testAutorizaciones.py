@@ -3,12 +3,7 @@ import sys
 import HtmlTestRunner
 
 # Importaciones de Page
-from SRC.PageObjects.Public.pagePublic import PagePublic
-from SRC.PageObjects.Login.pageLogin import PageLogin
-from SRC.PageObjects.Modulos.pageHome import PageHome
-from SRC.PageObjects.Modulos.pageToken import PageToken
-from SRC.PageObjects.Modulos.pageCredenciales import PageCredenciales
-from SRC.PageObjects.Modulos.pageAutorizaciones import PageAutorizaciones
+from ASE_VENTA.SRC.PageObjects import  pageHomeFiltros
 
 # Importaciones Modulos
 from selenium import webdriver
@@ -45,7 +40,7 @@ class TCAutorizaciones(unittest.TestCase):
         self.page_home = PageHome(self.driver)
         self.page_token = PageToken(self.driver)
         self.page_credenciales = PageCredenciales(self.driver)
-        self.page_autorizaciones = PageAutorizaciones(self.driver)
+        self.page_homeFiltros = PageHomeFiltro(self.driver)
 
         self.driver.implicitly_wait(5)
 
